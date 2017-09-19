@@ -53,11 +53,11 @@ public class CameraMovement : MonoBehaviour {
             }
                 
         
-            GameObject go = Instantiate(bulletPrefab) as GameObject;
+            /*GameObject go = Instantiate(bulletPrefab) as GameObject;
             go.transform.position = bulletPosition.transform.position;
             go.transform.rotation = bulletPosition.transform.rotation;
             go.GetComponent<Rigidbody>().AddForce(1000 * go.transform.up);
-            go.GetComponent<Rigidbody>().useGravity = true;
+            go.GetComponent<Rigidbody>().useGravity = true;*/
         }
     }
 
