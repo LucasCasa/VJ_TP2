@@ -45,6 +45,11 @@ public class CameraMovement : MonoBehaviour {
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             if (Physics.Raycast(ray,out hit, 200)) {
+				if (hit.collider.tag == "target") {
+					hit.collider.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+					hit.collider.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+					hit.collider.gameObject.SetActive (false);
+				}
                 print("Hit something!");
                 explosion.transform.position = hit.point;
                 explosion.SetActive(true);
