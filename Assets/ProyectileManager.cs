@@ -34,7 +34,8 @@ public class ProyectileManager : MonoBehaviour {
 		if (go == null)
 			return;
 		go.SetActive (true);
-		Vector2 pos = Random.insideUnitCircle*distance;
+		float angle = Random.value*2*Mathf.PI;
+		Vector2 pos = new Vector2(Mathf.Cos(angle)*distance,Mathf.Sin(angle)*distance);
 		go.transform.position = new Vector3 (pos.x, 0, pos.y);
 		Vector3 force = calcBallisticVelocityVector (go.transform.position, new Vector3 (0, 0, 0), 45);
 		var g = Physics.gravity.magnitude; // get the gravity value
