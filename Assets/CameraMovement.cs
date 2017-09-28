@@ -25,7 +25,7 @@ public class CameraMovement : MonoBehaviour {
 	public int bulletCapacity;
 	public Text health;
 
-	private Vector2 bulletWidth = new Vector2 (20, 0);
+	private Vector2 bulletWidth = new Vector2 (25, 0);
 
 	public int life = 10;
 
@@ -35,6 +35,8 @@ public class CameraMovement : MonoBehaviour {
         //lastMoouse = Input.mousePosition;
         Cursor.lockState = CursorLockMode.Locked;
 		bulletBar.sizeDelta = new Vector2 (bulletWidth.x * bulletCapacity, 77);
+		Camera cam = gameObject.GetComponent<Camera> ();
+		bulletBar.position = new Vector3 (cam.pixelWidth - bulletWidth.x * bulletCapacity - 30, 15, 0);
 		health.text = life.ToString();
 	}
 
@@ -59,7 +61,7 @@ public class CameraMovement : MonoBehaviour {
             bulletLightEffect.startEmiting();
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
-            if (Physics.Raycast(ray,out hit, 200)) {
+            if (Physics.Raycast(ray,out hit, 500)) {
 				if (hit.collider.tag == "target") {
 					hit.collider.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
 					hit.collider.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
