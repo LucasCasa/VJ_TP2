@@ -7,10 +7,12 @@ public class GUIUpdater : MonoBehaviour {
 
     public Text health;
     public Image healthIcon;
+	public Text timer;
 
     public RectTransform bulletBar;
     public Camera cam;
 
+	private float time = 0;
     private int bulletWidth = 25;
 
     public Player player;
@@ -28,5 +30,8 @@ public class GUIUpdater : MonoBehaviour {
 	void Update () {
         bulletBar.sizeDelta = new Vector2(bulletWidth * player.BulletAvailable, 77);
         health.text = player.life.ToString();
+		time += Time.deltaTime;
+		string timeStr = time.ToString ();
+		timer.text = "Time:\n" + timeStr.Substring(0,timeStr.IndexOf(".") + 2);
 	}
 }
