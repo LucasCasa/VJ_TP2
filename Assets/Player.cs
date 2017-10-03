@@ -50,7 +50,7 @@ public class Player : MonoBehaviour {
             ShootEffects();
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 500)) {
+            if (Physics.Raycast(ray, out hit)) {
                 if (hit.collider.tag == "target") {
                     hit.collider.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
                     hit.collider.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
