@@ -26,6 +26,9 @@ public class Player : MonoBehaviour {
     public int bulletCapacity;
 
     public int life = 10;
+	public bool shield = false;
+	public float shieldDuration = 0f;
+	public float totalShieldDuration = 10f;
 
     // Use this for initialization
     void Start() {
@@ -52,16 +55,23 @@ public class Player : MonoBehaviour {
             RaycastHit hit;
             
             if (Physics.Raycast(ray, out hit)) {
-                if (hit.collider.tag == "target") {
-                    hit.collider.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                    hit.collider.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-                    hit.collider.gameObject.SetActive(false);
-                    HitEffects(hit);
-                }
+				if (hit.collider.tag == "target") {
+					hit.collider.gameObject.GetComponent<Rigidbody> ().velocity = Vector3.zero;
+					hit.collider.gameObject.GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
+					hit.collider.gameObject.SetActive (false);
+					HitEffects (hit);
+				} else if (hit.collider.tag == "powerup") {
+					hit.collider.gameObject.GetComponent<PowerUp> ().Effect (this);
+				}
             }
 			ShootEffects();
 			Debug.DrawRay(transform.position,ray.direction*100,Color.red,10,true);
         }
+		if (shield) {
+			shieldDuration -= Time.deltaTime;
+			if (shieldDuration <= 0)
+				shield = false;
+		}
     }
     
     void ShootEffects() {
@@ -85,7 +95,12 @@ public class Player : MonoBehaviour {
     }
     void OnTriggerEnter(Collider other) {
         other.gameObject.SetActive(false);
-        life--;        
+		if (shield) {
+			shield = false;
+			shieldDuration = 0;
+		} else {
+			life--;     
+		}
     }
 
     public float BulletAvailable {

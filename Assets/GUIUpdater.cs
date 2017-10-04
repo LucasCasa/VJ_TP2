@@ -8,6 +8,7 @@ public class GUIUpdater : MonoBehaviour {
     public Text health;
     public Image healthIcon;
 	public Text timer;
+	public Image shieldIcon;
 
     public RectTransform bulletBar;
     public Camera cam;
@@ -23,12 +24,15 @@ public class GUIUpdater : MonoBehaviour {
         bulletBar.sizeDelta = new Vector2(bulletWidth * player.BulletCapacity, 77);
         bulletBar.position = new Vector3(cam.pixelWidth - bulletWidth * player.BulletCapacity - 30, 15, 0);
         health.text = health.ToString();
-
     }
 	
 	// Update is called once per frame
 	void Update () {
         bulletBar.sizeDelta = new Vector2(bulletWidth * player.BulletAvailable, 77);
+		if (player.shield)
+			shieldIcon.fillAmount = player.shieldDuration / player.totalShieldDuration;
+		else
+			shieldIcon.fillAmount = 0;
         health.text = player.life.ToString();
 		time += Time.deltaTime;
 		string timeStr = time.ToString ();

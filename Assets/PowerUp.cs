@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUp : MonoBehaviour {
+public abstract class PowerUp : MonoBehaviour {
 
-	public float height;
-	public float axisDistance;
-	public float duration;
-	public float minScale;
+	public float height = 10;
+	public float minAxisDistance = 10;
+	public float maxAxisDistance = 20;
+	public float duration = 10;
+	public float minScale = 0.1f;
 
 	// Use this for initialization
 	void Start () {
-		gameObject.transform.position = new Vector3 (Random.Range(-axisDistance,axisDistance), height, Random.Range(-axisDistance,axisDistance));
+		gameObject.transform.position = new Vector3 (Random.Range(minAxisDistance,maxAxisDistance), height, Random.Range(minAxisDistance,maxAxisDistance));
 	}
 	
 	// Update is called once per frame
@@ -21,4 +22,6 @@ public class PowerUp : MonoBehaviour {
 		if (gameObject.transform.localScale.x <= minScale)
 			Destroy (gameObject);
 	}
+
+	public abstract void Effect (Player player);
 }
