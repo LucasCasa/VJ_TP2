@@ -29,6 +29,7 @@ public class Player : MonoBehaviour {
 	public bool shield = false;
 	public float shieldDuration = 0f;
 	public float totalShieldDuration = 10f;
+	bool paused = false;
 
     // Use this for initialization
     void Start() {
@@ -37,18 +38,16 @@ public class Player : MonoBehaviour {
     }
 
     void Update() {
-        yaw += speedH * Input.GetAxis("Mouse X");// (Input.mousePosition.x - lastMoouse.x);
-        pitch -= speedV * Input.GetAxis("Mouse Y");// (Input.mousePosition.y - lastMoouse.y);
-        //Debug.Log((Input.mousePosition.y - lastMoouse.y) + " " + (Input.mousePosition.x - lastMoouse.x));
-        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
-        //lastMoouse = Input.mousePosition;
-        if (Input.GetKeyDown(KeyCode.P)) {
-            Cursor.lockState = CursorLockMode.None;
-        }
+		if (!paused) {
+			yaw += speedH * Input.GetAxis ("Mouse X");
+			pitch -= speedV * Input.GetAxis ("Mouse Y");
+			transform.eulerAngles = new Vector3 (pitch, yaw, 0.0f);
+		}
+        
         if (bulletAvailable < bulletCapacity) {
             bulletAvailable += Time.deltaTime;
         }
-        if (Input.GetMouseButtonDown(0) && BulletAvailable > 1) {
+		if (Input.GetMouseButtonDown(0) && BulletAvailable > 1 && !paused) {
             bulletAvailable--;
             
             Ray ray = new Ray(transform.position, transform.forward);
@@ -109,4 +108,11 @@ public class Player : MonoBehaviour {
     public int BulletCapacity {
         get { return bulletCapacity; }
     }
+	public void Continue(){
+		paused = false;
+	}
+	public void Pause(){
+		paused = true;
+	}
+
 }
