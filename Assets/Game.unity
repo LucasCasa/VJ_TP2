@@ -885,7 +885,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 460, y: 620}
-  m_SizeDelta: {x: 250, y: 100}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &399260942
 MonoBehaviour:
@@ -1909,6 +1909,8 @@ MonoBehaviour:
   force: 5
   time: 5
   dificulty: 0
+  timeSinceLastProyectile: 0
+  proyectileDeltaTime: 0
 --- !u!4 &729486583
 Transform:
   m_ObjectHideFlags: 0
@@ -3271,6 +3273,7 @@ MonoBehaviour:
   health: {fileID: 687059053}
   healthIcon: {fileID: 1107109344}
   timer: {fileID: 320221364}
+  shieldIcon: {fileID: 0}
   bulletBar: {fileID: 428873338}
   cam: {fileID: 2143482694}
   pauseScreen: {fileID: 1625562596}
@@ -3728,6 +3731,9 @@ MonoBehaviour:
   explosion: {fileID: 108974095}
   bulletCapacity: 15
   life: 10
+  shield: 0
+  shieldDuration: 0
+  totalShieldDuration: 10
 --- !u!65 &2143482697
 BoxCollider:
   m_ObjectHideFlags: 0

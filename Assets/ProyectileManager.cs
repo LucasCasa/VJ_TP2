@@ -12,6 +12,8 @@ public class ProyectileManager : MonoBehaviour {
 	public float force;
 	public float time;
     public float dificulty;
+	public float timeSinceLastProyectile;
+	public float proyectileDeltaTime;
 	private List<GameObject> list = new List<GameObject>();
 
 	// Use this for initialization
@@ -22,11 +24,18 @@ public class ProyectileManager : MonoBehaviour {
 			list.Add (go);
 		}
         dificulty = 0.5f;
-		InvokeRepeating("LaunchProjectile", start_time, interval); //Cambiar para que la dificultad vaya aumentando
+		proyectileDeltaTime = interval;
+		timeSinceLastProyectile = -start_time;
 	}
 
 	void Update(){
-		
+		timeSinceLastProyectile += Time.deltaTime;
+		if (timeSinceLastProyectile >= proyectileDeltaTime) {
+			LaunchProjectile ();
+			timeSinceLastProyectile = 0;
+			proyectileDeltaTime -= proyectileDeltaTime <= 0.5f ? 0 : 0.01f; 
+		}
+
 	}
 	
 

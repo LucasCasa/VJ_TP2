@@ -13,7 +13,7 @@ public class TextEffect : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		time += Time.fixedTime / 6;
+		time += 0.1f;
 		text.color = new Color (Mathf.Sin (time) / 4 + 0.75f, Mathf.Sin (time) / 4 + 0.75f, 0);
 	}
 }
