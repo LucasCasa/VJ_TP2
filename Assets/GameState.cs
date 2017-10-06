@@ -7,6 +7,8 @@ public class GameState : MonoBehaviour {
 
 	private static GameState _instance ;
 	private float dificulty;
+	private bool sceneChanged = false;
+	Player player;
 	// Use this for initialization
 	void Awake () {
 		//if we don't have an [_instance] set yet
@@ -16,18 +18,29 @@ public class GameState : MonoBehaviour {
 		else
 			Destroy(this.gameObject);
 
-
+		SceneManager.activeSceneChanged (LoadLevel);
 		DontDestroyOnLoad(this.gameObject) ;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
-
-	void loadGameScene(){
-		SceneManager.LoadScene ("Game");
+	void LoadLevel(Scene a, Scene b){
+		if (a.buildIndex == 0) {
+			player = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Player> ();
+		} else if (a.buildIndex == 1) {
+			//Muestro el Score en pantalla
+		} else if (a.buildIndex == 2) {
+			if (b.buildIndex == 1) {
+				player = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Player> ();
+			} else {
+				
+			}
+		}
 	}
+	
+	
 
 }
