@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 23160987057827262}
   - component: {fileID: 95446623182807776}
   - component: {fileID: 114692616931398934}
+  - component: {fileID: 136452470398928704}
   m_Layer: 0
   m_Name: Star
-  m_TagString: Untagged
+  m_TagString: powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,3 +118,16 @@ MonoBehaviour:
   duration: 10
   minScale: 0.1
   shield_duration: 10
+--- !u!136 &136452470398928704
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1116010322459960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.26600245
+  m_Height: 0.5178231
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

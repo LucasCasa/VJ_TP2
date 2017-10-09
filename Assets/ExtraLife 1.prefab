@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23060157089058860}
   - component: {fileID: 95604902814639854}
   - component: {fileID: 114043393576570898}
+  - component: {fileID: 136381978891017124}
   m_Layer: 0
   m_Name: ExtraLife 1
   m_TagString: powerup
@@ -115,3 +116,16 @@ MonoBehaviour:
   maxAxisDistance: 20
   duration: 10
   minScale: 0.1
+--- !u!136 &136381978891017124
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1292204273703382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.20779984
+  m_Height: 0.39304283
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.08712487, z: 0}
