@@ -23,7 +23,7 @@ public class ProyectileManager : MonoBehaviour {
 			go.SetActive (false);
 			list.Add (go);
 		}
-        dificulty = 0.5f;
+        //dificulty = 0.5f;
 		proyectileDeltaTime = interval;
 		timeSinceLastProyectile = -start_time;
 	}
@@ -39,7 +39,7 @@ public class ProyectileManager : MonoBehaviour {
 	}
 	
 
-    void SetDificulty(float dificulty) {
+    public void SetDificulty(float dificulty) {
         this.dificulty = dificulty;
     }
 	void LaunchProjectile(){

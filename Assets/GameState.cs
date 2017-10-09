@@ -12,35 +12,47 @@ public class GameState : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		//if we don't have an [_instance] set yet
-		if(!_instance)
-			_instance = this ;
+		if (!_instance){
+			_instance = this;
 		//otherwise, if we do, kill this thing
-		else
-			Destroy(this.gameObject);
-
+		}else{
+			Destroy (this.gameObject);
+			return;
+		}
 		SceneManager.activeSceneChanged += LoadLevel;
+		dificulty = 0.5f;
 		DontDestroyOnLoad(this.gameObject) ;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (player != null && player.life <= 0) {
+			SceneManager.LoadScene ("GameOver");
+		}
 	}
 
 	void LoadLevel(Scene a, Scene b){
-		if (a.buildIndex == 0) {
+		if (b.name == "Game") {
 			player = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Player> ();
-		} else if (a.buildIndex == 1) {
+			ProyectileManager p = GameObject.FindGameObjectWithTag ("Proyectile Manager").GetComponent<ProyectileManager> ();
+			Debug.Log ("dificultad " + dificulty);
+			p.SetDificulty(dificulty);
+			Debug.Log ("Ya setee la dificultad " + p.dificulty);
+		} else if (b.name == "GameOver") {
 			//Muestro el Score en pantalla
-		} else if (a.buildIndex == 2) {
-			if (b.buildIndex == 1) {
-				player = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Player> ();
-			} else {
-				
-			}
 		}
 	}
-	
+
+	public void setDificulty(float dif){
+		if (dif < 0.25 || dif > 2) {
+			Debug.Log("ERROR");
+		}
+		dificulty = dif;
+		Debug.Log (dificulty);
+	}
+	void OnDestroy(){
+		Debug.Log ("Goodbye" + dificulty);
+	}
 	
 
 }

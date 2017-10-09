@@ -10,7 +10,7 @@ public class MenuButtons : MonoBehaviour
 
     public void goToGame()
     {
-        SceneManager.LoadScene("game");
+        SceneManager.LoadScene("Game");
     }
 
     public void Quit()

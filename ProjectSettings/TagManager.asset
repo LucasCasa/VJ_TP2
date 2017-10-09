@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - target
+  - powerup
+  - Proyectile Manager
   layers:
   - Default
   - TransparentFX

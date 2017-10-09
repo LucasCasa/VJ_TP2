@@ -53,7 +53,7 @@ public class Player : MonoBehaviour {
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             
-            if (Physics.Raycast(ray, out hit)) {
+            if (Physics.Raycast(ray, out hit,500)) {
 				if (hit.collider.tag == "target") {
 					hit.collider.gameObject.GetComponent<Rigidbody> ().velocity = Vector3.zero;
 					hit.collider.gameObject.GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
@@ -64,7 +64,6 @@ public class Player : MonoBehaviour {
 				}
             }
 			ShootEffects();
-			Debug.DrawRay(transform.position,ray.direction*100,Color.red,10,true);
         }
 		if (shield) {
 			shieldDuration -= Time.deltaTime;
