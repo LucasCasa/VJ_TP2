@@ -14,20 +14,20 @@ public class CameraMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (offset.z.CompareTo(0) == 0 && offset.x.CompareTo(400) < 0)
+        if (offset.z.CompareTo(0) <= 0 && offset.x.CompareTo(400) <= 0)
         {
             offset.z = 0;
             offset.x += increment;
 
-        }else if (offset.z.CompareTo(400) == 0 && offset.x.CompareTo(0) > 0)
+        }else if (offset.z.CompareTo(400) >= 0 && offset.x.CompareTo(0) >= 0)
         {
             offset.z = 0;
             offset.x -= increment;   
-        }else if (offset.x.CompareTo(400) == 0 && offset.z.CompareTo(400) < 0)
+        }else if (offset.x.CompareTo(400) >= 0 && offset.z.CompareTo(400) <= 0)
         {
 			offset.z += increment;
             offset.x = 400;
-        }else if (offset.x.CompareTo(0) == 0 && offset.z.CompareTo(0) > 0)
+        }else if (offset.x.CompareTo(0) <= 0 && offset.z.CompareTo(0) >= 0)
         {
 			offset.z -= increment;
 			offset.x = 0;
