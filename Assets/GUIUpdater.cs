@@ -55,10 +55,11 @@ public class GUIUpdater : MonoBehaviour {
 			}
 		}
 		if(!paused){
-			if (player.shield)
-				shieldIcon.fillAmount = player.shieldDuration / player.totalShieldDuration;
-			else
-				shieldIcon.fillAmount = 0;	
+			if (player.shield){
+				//shieldIcon.fillAmount = player.shieldDuration / player.totalShieldDuration;
+			}else{
+				//shieldIcon.fillAmount = 0;	
+			}
 			bulletBar.sizeDelta = new Vector2(bulletWidth * player.BulletAvailable, 77);
 			health.text = player.life.ToString();
 			time += Time.deltaTime;
