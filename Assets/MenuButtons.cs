@@ -8,19 +8,19 @@ using UnityEngine.SceneManagement;
 public class MenuButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 
-    public Text Menu;
+    public Text theMenu;
 
     Color highlighted = new Color(1, 1, 0); //Or however you do your color
     Color other = new Color(0.8f, 0.8f, 0); //Or however you do your color
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Menu.color = highlighted;
+        theMenu.color = highlighted;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Menu.color = other;
+        theMenu.color = other;
     }
 
     public void goToGame()
@@ -39,13 +39,15 @@ public class MenuButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     }
 
     // Use this for initialization
-	void Start () {
-		Menu = this.GetComponentInChildren<Text>();
-		Menu.color = other;
+	void Start () 
+    {
+        theMenu = this.GetComponentInChildren<Text>();
+        theMenu.color = other;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 		
 	}
 }

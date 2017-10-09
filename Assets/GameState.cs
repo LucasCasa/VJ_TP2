@@ -18,7 +18,7 @@ public class GameState : MonoBehaviour {
 		else
 			Destroy(this.gameObject);
 
-		SceneManager.activeSceneChanged (LoadLevel);
+		SceneManager.activeSceneChanged += LoadLevel;
 		DontDestroyOnLoad(this.gameObject) ;
 	}
 	
