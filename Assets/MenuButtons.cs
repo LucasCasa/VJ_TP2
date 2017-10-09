@@ -5,23 +5,10 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MenuButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class MenuButtons : MonoBehaviour
 {
 
     public Text theMenu;
-
-    Color highlighted = new Color(1, 1, 0); //Or however you do your color
-    Color other = new Color(0.8f, 0.8f, 0); //Or however you do your color
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        theMenu.color = highlighted;
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        theMenu.color = other;
-    }
 
     public void goToGame()
     {
@@ -38,16 +25,8 @@ public class MenuButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         SceneManager.LoadScene("settings");
     }
 
-    // Use this for initialization
-	void Start () 
+    public void goToMenu()
     {
-        theMenu = this.GetComponentInChildren<Text>();
-        theMenu.color = other;
-	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
-		
-	}
+        SceneManager.LoadScene("menu");
+    }
 }
