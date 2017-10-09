@@ -8,8 +8,6 @@ using UnityEngine.SceneManagement;
 public class MenuButtons : MonoBehaviour
 {
 
-    public Text theMenu;
-
     public void goToGame()
     {
         SceneManager.LoadScene("game");
