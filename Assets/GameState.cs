@@ -8,6 +8,9 @@ public class GameState : MonoBehaviour {
 	private static GameState _instance ;
 	private float dificulty;
 	private bool sceneChanged = false;
+	private GameStats stats;
+	private float time;
+
 	Player player;
 	// Use this for initialization
 	void Awake () {
@@ -21,14 +24,19 @@ public class GameState : MonoBehaviour {
 		}
 		SceneManager.activeSceneChanged += LoadLevel;
 		dificulty = 0.5f;
+		time = 0;
 		DontDestroyOnLoad(this.gameObject) ;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (player != null && player.life <= 0) {
-			SceneManager.LoadScene ("GameOver");
+			this.stats = player.getStats();
+			stats.score = this.time;
+			this.time = 0;
+			SceneManager.LoadScene ("End");
 		}
+		this.time += Time.deltaTime;
 	}
 
 	void LoadLevel(Scene a, Scene b){
@@ -53,6 +61,12 @@ public class GameState : MonoBehaviour {
 	void OnDestroy(){
 		Debug.Log ("Goodbye" + dificulty);
 	}
-	
 
+	public float getDifficulty(){
+		return this.dificulty;
+	}
+	
+	public GameStats getStats(){
+		return this.stats;
+	}
 }

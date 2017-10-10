@@ -25,6 +25,8 @@ public class Player : MonoBehaviour {
     private float bulletAvailable;
     public int bulletCapacity;
 
+    private GameStats stats;
+
     public int life = 10;
 	public bool shield = false;
 	public float shieldDuration = 0f;
@@ -35,6 +37,7 @@ public class Player : MonoBehaviour {
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
         bulletAvailable = bulletCapacity;
+        stats = new GameStats();
     }
 
     void Update() {
@@ -49,17 +52,20 @@ public class Player : MonoBehaviour {
         }
 		if (Input.GetMouseButtonDown(0) && BulletAvailable > 1 && !paused) {
             bulletAvailable--;
-            
+            stats.shots += 1;
+
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             
             if (Physics.Raycast(ray, out hit,500)) {
 				if (hit.collider.tag == "target") {
+                    stats.barrelsHit += 1;
 					hit.collider.gameObject.GetComponent<Rigidbody> ().velocity = Vector3.zero;
 					hit.collider.gameObject.GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
 					hit.collider.gameObject.SetActive (false);
 					HitEffects (hit);
 				} else if (hit.collider.tag == "powerup") {
+                    stats.pwupHit += 1;
 					hit.collider.gameObject.GetComponent<PowerUp> ().Effect (this);
 				}
             }
@@ -113,5 +119,8 @@ public class Player : MonoBehaviour {
 	public void Pause(){
 		paused = true;
 	}
+    public GameStats getStats(){
+        return this.stats;
+    }
 
 }
