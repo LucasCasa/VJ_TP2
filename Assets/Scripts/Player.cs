@@ -21,7 +21,6 @@ public class Player : MonoBehaviour {
     public WFX_LightFlicker bulletLightEffect;
     public GameObject explosion;
 
-    private Vector2 bulletWidth = new Vector2(25, 0);
     private float bulletAvailable;
     public int bulletCapacity;
 

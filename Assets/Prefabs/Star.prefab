@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 10
-  minAxisDistance: 10
-  maxAxisDistance: 20
+  minAxisDistance: 20
+  maxAxisDistance: 30
   duration: 10
   minScale: 0.1
   shield_duration: 10

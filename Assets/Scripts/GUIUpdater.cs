@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GUIUpdater : MonoBehaviour {
 
@@ -79,7 +80,7 @@ public class GUIUpdater : MonoBehaviour {
 	}
 
 	void GotoMenu(){
-		//TODO
+        SceneManager.LoadScene("menu");
 	}
 	void Quit (){
 	

@@ -12,7 +12,10 @@ public abstract class PowerUp : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		gameObject.transform.position = new Vector3 (Random.Range(minAxisDistance,maxAxisDistance), height, Random.Range(minAxisDistance,maxAxisDistance));
+        float difficulty = GameObject.Find("GameState").GetComponent<GameState>().getDifficulty();
+        float angle = Random.value * difficulty * Mathf.PI;
+        Vector2 pos = new Vector2(Mathf.Cos(angle) *Random.Range(minAxisDistance, maxAxisDistance), Mathf.Sin(angle) * Random.Range(minAxisDistance, maxAxisDistance));
+		gameObject.transform.position = new Vector3 (pos.x, height, pos.y);
 	}
 	
 	// Update is called once per frame
