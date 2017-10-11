@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3474173, g: 0.4147607, b: 0.49781215, a: 1}
+  m_IndirectSpecularColor: {r: 0.34744054, g: 0.4146754, b: 0.4977309, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -514,6 +514,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -1099,6 +1113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593c5cf55136a4194958a305dafa0c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ded: {fileID: 8300000, guid: 5328a8874553aaf4ea7e6c1634ad9e89, type: 3}
 --- !u!4 &1497953657
 Transform:
   m_ObjectHideFlags: 0
@@ -1218,6 +1233,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17349e47ae2ff489fa5a5fd032ea5ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EasyB: {fileID: 0}
+  MediumB: {fileID: 0}
+  HardB: {fileID: 0}
+  ImpossibleB: {fileID: 0}
 --- !u!1 &1991860882
 GameObject:
   m_ObjectHideFlags: 0
