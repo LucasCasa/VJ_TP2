@@ -80,9 +80,10 @@ public class GUIUpdater : MonoBehaviour {
 	}
 
 	void GotoMenu(){
+		Time.timeScale = 1;
         SceneManager.LoadScene("menu");
 	}
 	void Quit (){
-	
+		
 	}
 }
