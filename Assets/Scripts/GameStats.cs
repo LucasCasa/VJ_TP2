@@ -17,6 +17,8 @@ public class GameStats {
 	}
 
 	public float getAccuracy(){
+        if (this.shots == 0)
+            return 0f;
 		return (barrelsHit+pwupHit)/((float)shots);
 	}
 

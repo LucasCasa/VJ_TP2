@@ -34,7 +34,6 @@ public class GameState : MonoBehaviour {
 		if (player != null && player.life <= 0) {
 			this.stats = player.getStats();
 			stats.score = this.time;
-			this.time = 0;
 			SceneManager.LoadScene ("End");
 		}
 		this.time += Time.deltaTime;
@@ -47,6 +46,7 @@ public class GameState : MonoBehaviour {
 			Debug.Log ("dificultad " + dificulty);
 			p.SetDificulty(dificulty);
 			Debug.Log ("Ya setee la dificultad " + p.dificulty);
+            this.time = 0;
 		} else if (b.name == "End") {
             AudioSource.PlayClipAtPoint(ded, new Vector3(0, 0, 0));
             Cursor.lockState = CursorLockMode.None;
@@ -72,4 +72,8 @@ public class GameState : MonoBehaviour {
 	public GameStats getStats(){
 		return this.stats;
 	}
+
+    public float getTime(){
+        return this.time;
+    }
 }

@@ -16,7 +16,6 @@ public class GUIUpdater : MonoBehaviour {
 	public GameObject pauseScreen;
 	public GameObject HUD;
 
-	private float time = 0;
     private int bulletWidth = 25;
 
     public Player player;
@@ -24,6 +23,8 @@ public class GUIUpdater : MonoBehaviour {
 	public Button Cont;
 	public Button Menu;
 	public Button Exit;
+
+    private GameState gamestate;
 
     // Use this for initialization
     void Start () {
@@ -33,6 +34,7 @@ public class GUIUpdater : MonoBehaviour {
         bulletBar.sizeDelta = new Vector2(bulletWidth * player.BulletCapacity, 77);
         bulletBar.position = new Vector3(cam.pixelWidth - bulletWidth * player.BulletCapacity - 30, 15, 0);
         health.text = health.ToString();
+        gamestate = GameObject.Find("GameState").GetComponent<GameState>();
     }
 	
 	// Update is called once per frame
@@ -62,8 +64,7 @@ public class GUIUpdater : MonoBehaviour {
 			}
 			bulletBar.sizeDelta = new Vector2(bulletWidth * player.BulletAvailable, 77);
 			health.text = player.life.ToString();
-			time += Time.deltaTime;
-			string timeStr = time.ToString ();
+            string timeStr = gamestate.getTime().ToString ();
 			timer.text = "Time:\n" + timeStr.Substring(0,timeStr.IndexOf(".") + 2);
 		}
 	}
