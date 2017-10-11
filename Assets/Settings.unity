@@ -408,6 +408,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17349e47ae2ff489fa5a5fd032ea5ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EasyB: {fileID: 121247927}
+  MediumB: {fileID: 728340571}
+  HardB: {fileID: 1808570153}
+  ImpossibleB: {fileID: 719175497}
 --- !u!1 &86327155
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17349e47ae2ff489fa5a5fd032ea5ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EasyB: {fileID: 121247927}
+  MediumB: {fileID: 728340571}
+  HardB: {fileID: 1808570153}
+  ImpossibleB: {fileID: 719175497}
 --- !u!1 &96223495
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,6 +901,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17349e47ae2ff489fa5a5fd032ea5ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EasyB: {fileID: 121247927}
+  MediumB: {fileID: 728340571}
+  HardB: {fileID: 1808570153}
+  ImpossibleB: {fileID: 719175497}
 --- !u!1 &482487887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,6 +1086,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17349e47ae2ff489fa5a5fd032ea5ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EasyB: {fileID: 0}
+  MediumB: {fileID: 0}
+  HardB: {fileID: 0}
+  ImpossibleB: {fileID: 0}
 --- !u!1 &719175497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,6 +1291,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17349e47ae2ff489fa5a5fd032ea5ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EasyB: {fileID: 0}
+  MediumB: {fileID: 0}
+  HardB: {fileID: 0}
+  ImpossibleB: {fileID: 0}
 --- !u!1 &883771707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1782,6 +1802,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17349e47ae2ff489fa5a5fd032ea5ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EasyB: {fileID: 0}
+  MediumB: {fileID: 0}
+  HardB: {fileID: 0}
+  ImpossibleB: {fileID: 0}
 --- !u!1 &1242762832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1915,6 +1939,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17349e47ae2ff489fa5a5fd032ea5ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EasyB: {fileID: 0}
+  MediumB: {fileID: 0}
+  HardB: {fileID: 0}
+  ImpossibleB: {fileID: 0}
 --- !u!1 &1298617442
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,6 +2258,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17349e47ae2ff489fa5a5fd032ea5ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EasyB: {fileID: 121247927}
+  MediumB: {fileID: 728340571}
+  HardB: {fileID: 1808570153}
+  ImpossibleB: {fileID: 719175497}
 --- !u!1 &1778223047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,6 +2395,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17349e47ae2ff489fa5a5fd032ea5ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EasyB: {fileID: 0}
+  MediumB: {fileID: 0}
+  HardB: {fileID: 0}
+  ImpossibleB: {fileID: 0}
 --- !u!1 &1808570153
 GameObject:
   m_ObjectHideFlags: 0
